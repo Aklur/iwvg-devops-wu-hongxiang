@@ -27,18 +27,18 @@ public class UserTest {
 
     @Test
     void testUserNoList(){
-        User user = new User();
-        assertNotNull(user.getFractions());
+        User user2 = new User();
+        assertNotNull(user2.getFractions());
     }
 
     @Test
     void testUserWithInf(){
         List<Fraction> fractionList = new ArrayList<>();
-        User user = new User("1","David","Wu",fractionList);
-        assertEquals("1",user.getId());
-        assertEquals("David",user.getName());
-        assertEquals("Wu",user.getFamilyName());
-        assertNotNull(user.getFractions());
+        User user3 = new User("1","David","Wu",fractionList);
+        assertEquals("1",user3.getId());
+        assertEquals("David",user3.getName());
+        assertEquals("Wu",user3.getFamilyName());
+        assertNotNull(user3.getFractions());
     }
 
     @Test
@@ -59,6 +59,22 @@ public class UserTest {
     @Test
     void testGetFractions(){
         assertEquals(3,user.getFractions().size());
+    }
+
+    @Test
+    void testSetName(){
+        user.setName("Hongxiang");
+        assertEquals("Hongxiang",user.getName());
+    }
+
+    @Test
+    void testFullName(){ assertEquals("David Wu", user.fullName());
+    }
+
+    @Test
+    void testSetFamilyName(){
+        user.setFamilyName("Li");
+        assertEquals("Li",user.getFamilyName());
     }
 
     @Test
