@@ -76,6 +76,19 @@ public class UserTest {
     }
 
     @Test
+    void testInitials(){ assertEquals("D.",user.initials());
+    }
+
+    @Test
+    void testToString(){
+        List<Fraction> fractionListNew = new ArrayList<>();
+        Fraction fraction6 = new Fraction(2,2);
+        fractionListNew.add(fraction6);
+        user.setFractions(fractionListNew);
+        assertEquals("User{id='1', name='David', familyName='Wu', fractions=[Fraction{numerator=2, denominator=2}]}",user.toString());
+    }
+
+    @Test
     void testSetFraction(){
         List<Fraction> fractionListNew = new ArrayList<>();
         Fraction fraction4 = new Fraction(2,2);
