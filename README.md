@@ -2,6 +2,5 @@
 ## Ingeniería Web: Visión General (IWVG) DevOps
 > Este proyecto es una Plantilla de apoyo docente de la asignatura.
 [![DevOps](https://github.com/Aklur/iwvg-devops-wu-hongxiang/actions/workflows/test_sonar.yml/badge.svg)](https://github.com/Aklur/iwvg-devops-wu-hongxiang/actions/workflows/test.yml)
-
 ### Estado del código
 
