@@ -12,6 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class FractionTest {
 
     private Fraction fraction;
+
     @BeforeEach
     void before() {
         this.fraction = new Fraction(8,4);
@@ -49,6 +50,45 @@ public class FractionTest {
     @Test
     void testDecimal() {
         assertEquals(2,fraction.decimal());
+    }
+
+    @Test
+    void testIsProper() { assertFalse(fraction.getNumerator() < fraction.getDenominator()); }
+
+    @Test
+    void testIsImProper() { assertTrue(fraction.getNumerator() > fraction.getDenominator()); }
+
+    @Test
+    void testIsEquivalent() {
+        Fraction fraction1 = new Fraction(8,4);
+        assertTrue(fraction.isEquivalent(fraction1));
+    }
+
+    @Test
+    void testAdd() {
+        Fraction fraction1 = new Fraction(1,1);
+        Fraction fractionResult = new Fraction(12,4);
+        fraction = fraction.add(fraction1);
+        assertSame(fractionResult.getNumerator(),fraction.getNumerator());
+        assertSame(fractionResult.getDenominator(),fraction.getDenominator());
+    }
+
+    @Test
+    void testMultiply() {
+        Fraction fraction1 = new Fraction(2,2);
+        Fraction fractionResult = new Fraction(16,8);
+        fraction = fraction.multiply(fraction1);
+        assertSame(fraction.getNumerator(),fractionResult.getNumerator());
+        assertSame(fraction.getDenominator(),fractionResult.getDenominator());
+    }
+
+    @Test
+    void testDivide() {
+        Fraction fraction1 = new Fraction(2,1);
+        Fraction fractionResult = new Fraction(8,8);
+        fraction = fraction.divide(fraction1);
+        assertSame(fraction.getNumerator(),fractionResult.getNumerator());
+        assertSame(fraction.getDenominator(),fractionResult.getDenominator());
     }
 
     @Test
