@@ -38,14 +38,14 @@ public class Fraction {
     public boolean isImproper(){ return this.numerator > this.denominator; }
 
     public boolean isEquivalent(Fraction fraction){
-        int numerador1 = this.numerator * fraction.denominator;
-        int numerador2 = this.denominator * fraction.numerator;
-        return numerador1 == numerador2; }
+        int num1 = this.numerator * fraction.denominator;
+        int num2 = this.denominator * fraction.numerator;
+        return num1 == num2; }
 
     public Fraction add(Fraction fraction){
         int denominador = this.denominator * fraction.denominator;
-        int numerador1 = this.numerator * denominador;
-        int numerador2 = fraction.numerator * denominador;
+        int numerador1 = this.numerator * fraction.denominator;
+        int numerador2 = fraction.numerator * this.denominator;
         this.setNumerator(numerador1 + numerador2);
         this.setDenominator(denominador);
         return this; }
