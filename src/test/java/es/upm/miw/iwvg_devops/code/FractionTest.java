@@ -53,10 +53,10 @@ public class FractionTest {
     }
 
     @Test
-    void testIsProper() { assertFalse(fraction.getNumerator() < fraction.getDenominator()); }
+    void testIsProper() { assertFalse(fraction.isProper()); }
 
     @Test
-    void testIsImProper() { assertTrue(fraction.getNumerator() > fraction.getDenominator()); }
+    void testIsImProper() { assertTrue(fraction.isImproper()); }
 
     @Test
     void testIsEquivalent() {

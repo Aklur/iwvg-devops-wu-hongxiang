@@ -56,8 +56,12 @@ public class User {
         return this.name + " " + this.familyName;
     }
 
-    public String initials() {
+    public String initialsName() {
         return this.name.substring(0, 1) + ".";
+    }
+
+    public String initialsFamilyName() {
+        return this.familyName.substring(0, 1) + ".";
     }
 
     @Override
