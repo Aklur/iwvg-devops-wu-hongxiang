@@ -76,7 +76,11 @@ public class UserTest {
     }
 
     @Test
-    void testInitials(){ assertEquals("D.",user.initials());
+    void testInitialsName(){ assertEquals("D.",user.initialsName());
+    }
+
+    @Test
+    void testInitialsFamilyName(){ assertEquals("W.",user.initialsFamilyName());
     }
 
     @Test
