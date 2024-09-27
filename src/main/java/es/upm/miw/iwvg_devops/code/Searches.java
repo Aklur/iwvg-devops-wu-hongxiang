@@ -31,17 +31,15 @@ public class Searches {
                 .map(User::getFamilyName);
     }
 
-    public Stream<String> findUserFamilyNameInitialByAnyProperFraction() {
+    public Stream<String> findUserIdByAnyProperFraction() {
         return new UsersDatabase().findAll()
                 .filter(user -> user.getFractions().stream()
                         .anyMatch(fraction -> fraction.isProper()))
                 .map(User::initialsFamilyName);
     }
 
-
     public Stream<String> findUserNameByAnyImproperFraction() {
         return Stream.empty();
     }
-
 
 }
