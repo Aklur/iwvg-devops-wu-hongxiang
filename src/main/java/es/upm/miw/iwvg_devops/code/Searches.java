@@ -3,10 +3,7 @@ package es.upm.miw.iwvg_devops.code;
 import java.util.Objects;
 import java.util.stream.Stream;
 
-//Stream<String> findUserFamilyNameInitialBySomeProperFraction();
-//1 Stream<String> findUserIdBySomeProperFraction();
-//2 Fraction findFractionMultiplicationByUserFamilyName(String familyName);
-//Stream<String> findUserNameBySomeImproperFraction();
+
 public class Searches {
     public Stream<String> findUserFamilyNameByUserNameDistinct(String userName) {
     return new UsersDatabase().findAll()
@@ -38,6 +35,7 @@ public class Searches {
                 .map(User::initialsFamilyName);
     }
     public Fraction findFractionMultiplicationByUserFamilyName(String familyName) {
+        String cambio = "";
         return new UsersDatabase().findAll()
                 .filter(user -> familyName.equals(user.getFamilyName()))
                 .flatMap(user -> user.getFractions().stream()
