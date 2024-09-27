@@ -44,8 +44,12 @@ public class Searches {
                         .filter(Objects::nonNull))
                 .reduce(new Fraction(1, 1), (acc, fraction) -> acc.multiply(fraction));
     }
+
     public Stream<String> findUserNameByAnyImproperFraction() {
-        return Stream.empty();
+        return new UsersDatabase().findAll()
+                .filter(user -> user.getFractions().stream()
+                        .anyMatch(fraction -> fraction.isImproper()))
+                .map(User::getName);
     }
 
 }
